@@ -1,41 +1,34 @@
+import {init} from './loading.js';
+
+
+init()
+
+
 const container = document.querySelector('.controle')
 const kyo = document.querySelector('.kyo');
-const frente = document.createElement('button');
-frente.id = 'frente';
-frente.style.backgroundColor = 'teal';
-frente.textContent= "parado"
-frente.style.width = '66px'
-const tras = document.createElement('button');
-frente.id = 'tras';
-tras.style.backgroundColor = 'teal';
-tras.style.width = '66px'
-tras.textContent= "corre"
 
-const soco = document.createElement('button');
-soco.id = 'tras';
-soco.style.backgroundColor = 'teal';
-soco.style.width = '66px'
-soco.textContent= "soco"
-const pula = document.createElement('button');
-pula.id = 'tras';
-pula.style.backgroundColor = 'teal';
-pula.style.width = '66px'
-pula.textContent= "pular"
+
 
 let valor=0;
 let loopsoco;
 let looppulo;
+let loopcorre;
 
-soco.addEventListener('click', function(){
-  loopsoco = setInterval(darSoco, 300);
+document.addEventListener ('keypress', (event) => {
+  const keyName = event.key;
+  switch(keyName){
+    case 'w':  looppulo = setInterval(pular, 300);
+    break;
+    case 'a':  loopcorre = setInterval(correr, 300);
+    break;
+    case 'd':  parar;
+    break;
+    case 's':  loopsoco = setInterval(darSoco, 300);
+    break;
+  }
 });
-pula.addEventListener('click', function(){
-  looppulo = setInterval(pular, 300);
-});
-tras.addEventListener('click', function(){
-  loopcorre = setInterval(correr, 200);
-});
-frente.addEventListener('click', parar);
+
+
 
 function parar(){
   valor=0
@@ -45,6 +38,7 @@ function correr(){
   valor -= 100;
   kyo.style.background = `url(kyo.png) ${valor}px -200px`
   if(valor <= -500){
+    console.log(valor)
     parar()
     clearInterval(loopcorre);
   }
@@ -66,10 +60,18 @@ function darSoco(){
     }
 }
 
+function criarElemento(elem,id,back,larg,bordRa,text){
+const elemento = document.createElement(elem);
+elemento.id = id;
+elemento.className= id
+//elemento.style.backgroundColor = back;
+elemento.style.width = larg
+elemento.style.borderRadius= bordRa
+elemento.textContent= text
+elemento.style.cursor ='pointer'
+
+return elemento 
+}
 
 
-container.appendChild(tras)
-container.appendChild(frente)
-container.appendChild(soco)
-container.appendChild(pula)
 document.body.appendChild(container)
