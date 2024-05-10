@@ -8,6 +8,12 @@ export function init(){
   loop = setInterval(mudar, 600);
 }
 
+export function iorix(){
+  container0.style.display = 'block';
+  container3.style.display = 'block';
+  iori.style.background = `url(iori.png) -270px 0px`;
+}
+
 function mudar(){
   valor+=270;
   iori.style.background = `url(iori.png) -270px -${valor}px`

@@ -1,4 +1,4 @@
-import {init} from './loading.js';
+import {init,iorix} from './loading.js';
 
 
 init()
@@ -13,7 +13,8 @@ let valor=0;
 let loopsoco;
 let looppulo;
 let loopcorre;
-
+let string='';
+let secret ='';
 document.addEventListener ('keypress', (event) => {
   const keyName = event.key;
   switch(keyName){
@@ -27,7 +28,37 @@ document.addEventListener ('keypress', (event) => {
     break;
   }
 });
-
+document.addEventListener ('keyup', (event) => {
+  
+  string +=event.key
+  if(string.length>=9){
+    if(string==='dev-Enter'){
+      secret = string.split('-');
+      
+      iorix()
+      string=''
+      secret=''
+    }else if(string==='zero-Enter'){
+      init()
+    }
+    else{
+      string=''
+      secret=''
+    }
+  }
+  console.log(string)
+  
+  // switch(keyName){
+  //   case 'w':  looppulo = setInterval(pular, 300);
+  //   break;
+  //   case 'a':  loopcorre = setInterval(correr, 300);
+  //   break;
+  //   case 'd':  parar;
+  //   break;
+  //   case 's':  loopsoco = setInterval(darSoco, 300);
+  //   break;
+  // }
+});
 
 
 function parar(){
