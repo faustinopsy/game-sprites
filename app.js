@@ -31,7 +31,7 @@ document.addEventListener ('keypress', (event) => {
 document.addEventListener ('keyup', (event) => {
   
   string +=event.key
-  if(string.length>=9){
+  if(string.length >= 9){
     if(string==='dev-Enter'){
       secret = string.split('-');
       

@@ -11,7 +11,7 @@ export function init(){
 export function iorix(){
   container0.style.display = 'block';
   container3.style.display = 'block';
-  iori.style.background = `url(iori.png) -270px 0px`;
+  iori.style.background = `url(iori.png) -270px -270px`;
 }
 
 function mudar(){
@@ -19,8 +19,7 @@ function mudar(){
   iori.style.background = `url(iori.png) -270px -${valor}px`
     if(valor >= 1200){
     clearInterval(loop);
-    iori.style.background = `url(iori.png) -270px 0px`
-    iori.style.background = 'red'
+    iori.style.background = `url(iori.png) -270px -270px`
     container0.style.display = 'none'
     container3.style.display = 'none'
     }
