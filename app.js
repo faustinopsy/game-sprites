@@ -3,11 +3,7 @@ import {init,iorix} from './loading.js';
 
 init()
 
-
-const container = document.querySelector('.controle')
 const kyo = document.querySelector('.kyo');
-
-
 
 let valor=0;
 let loopsoco;
@@ -18,13 +14,13 @@ let secret ='';
 document.addEventListener ('keypress', (event) => {
   const keyName = event.key;
   switch(keyName){
-    case 'w':  looppulo = setInterval(pular, 300);
+    case 'w':  looppulo = setInterval(pular, 200);
     break;
-    case 'a':  loopcorre = setInterval(correr, 300);
+    case 'a':  loopcorre = setInterval(correr, 200);
     break;
     case 'd':  parar;
     break;
-    case 's':  loopsoco = setInterval(darSoco, 300);
+    case 's':  loopsoco = setInterval(darSoco, 200);
     break;
   }
 });
@@ -48,16 +44,6 @@ document.addEventListener ('keyup', (event) => {
   }
   console.log(string)
   
-  // switch(keyName){
-  //   case 'w':  looppulo = setInterval(pular, 300);
-  //   break;
-  //   case 'a':  loopcorre = setInterval(correr, 300);
-  //   break;
-  //   case 'd':  parar;
-  //   break;
-  //   case 's':  loopsoco = setInterval(darSoco, 300);
-  //   break;
-  // }
 });
 
 
@@ -83,7 +69,7 @@ function pular(){
   }
 }
 function darSoco(){
-  valor+=-100;
+  valor+=-99;
     kyo.style.background = `url(kyo.png) ${valor}px -300px`
     if(valor <= -500){
       clearInterval(loopsoco);
@@ -91,18 +77,4 @@ function darSoco(){
     }
 }
 
-function criarElemento(elem,id,back,larg,bordRa,text){
-const elemento = document.createElement(elem);
-elemento.id = id;
-elemento.className= id
-//elemento.style.backgroundColor = back;
-elemento.style.width = larg
-elemento.style.borderRadius= bordRa
-elemento.textContent= text
-elemento.style.cursor ='pointer'
 
-return elemento 
-}
-
-
-document.body.appendChild(container)
