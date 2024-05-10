@@ -51,23 +51,15 @@ body{
 p{
   color:aliceblue;
 }
-#container-0{
-  display: block;
-  position: fixed;
+#loading{
+  position: absolute;
   background-color: black;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 4;
 }
-.container-2{
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  width: 120px;
-  height: 120px;
-  zoom: 2;
-}
-.container-3{
+
+.pai-iori{
   display: flex;
   flex-direction: row;
   position: fixed;
@@ -80,13 +72,63 @@ p{
   backdrop-filter: blur(20%);
   z-index: 3;
 }
-.kyo{
-  background: url(kyo.png) -10px 0;
+#game{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+}
+.pai-cenario {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 320px;
+  height: 120px;
+  zoom: 2;
+  z-index: 1; 
+}
+.pai-kyo {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  zoom: 2;
+}
+
+.kyo {
+  position: relative;
+  z-index: 2; 
+  background: url('kyo.png') -10px 0;
   transform: scaleX(-1) rotate(360deg);
   margin: 0px 0px;
   cursor: pointer;
 }
+.pai-inimigo {
+  position: absolute;
+  top: 50px;
+  
+}
 
+.inimigo {
+  position: relative;
+  width: 150px; 
+  height: 150px;
+  left: 330px; 
+  background: url('inimigo.png') no-repeat; 
+  background-size: cover;
+  transform: scaleX(-1) rotate(360deg);
+  z-index: 3;
+}
+.cenario {
+  position: relative; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  z-index: 1; 
+  background: url('cenario.png'); 
+}
 #tras:hover{
   background-color: gold;
 }

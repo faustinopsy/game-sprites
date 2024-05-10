@@ -1,9 +1,11 @@
-const container0 = document.querySelector(`#container-0`);
-const container3 = document.querySelector(`.container-3`);
+const container0 = document.querySelector(`#loading`);
+const container3 = document.querySelector(`.pai-iori`);
 const iori = document.querySelector(`.iori`);
 iori.style.background = `url(iori.png) -270px 0px`;
 let valor=0;
 let  loop= null;
+let string='';
+let secret ='';
 export function init(){
   loop = setInterval(mudar, 600);
 }
@@ -24,3 +26,24 @@ function mudar(){
     container3.style.display = 'none'
     }
 }
+document.addEventListener ('keyup', (event) => {
+  
+  string +=event.key
+  if(string.length >= 9){
+    if(string==='dev-Enter'){
+      secret = string.split('-');
+      
+      iorix()
+      string=''
+      secret=''
+    }else if(string==='zero-Enter'){
+      init()
+    }
+    else{
+      string=''
+      secret=''
+    }
+  }
+  console.log(string)
+  
+});
