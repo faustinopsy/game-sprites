@@ -1,5 +1,11 @@
+import { Kyo } from './Kyo.js';
+
+const kyoElemento = document.querySelector('.kyo');
+const kyo = new Kyo(kyoElemento);
+
 const container0 = document.querySelector(`#loading`);
 const container3 = document.querySelector(`.pai-iori`);
+
 const iori = document.querySelector(`.iori`);
 const BACKGROUND_INICIAL = `url(../img/iori.png) -270px 0px`;
 const BACKGROUND_ATIVO = `url(../img/iori.png) -270px -270px`;
@@ -34,10 +40,18 @@ function iniciarAnimacao(){
     pararAnimacao();
     }
 }
-
+function virarDireita(){
+  kyo.kyo.classList.add('virar')
+  
+}
+function virarEsquerda(){
+  kyo.kyo.classList.remove('virar')
+  
+}
 document.addEventListener ('keyup', (event) => {
   
   string +=event.key
+  console.log(string)
   if(string.length >= 9){
     switch(string){
       case 'dev-Enter':
@@ -46,7 +60,12 @@ document.addEventListener ('keyup', (event) => {
       case 'zero-Enter':
         init()
       break;
-      
+      case 'ArrowRight' :
+        virarDireita()
+      break;
+      case 'ArrowLeft' :
+        virarEsquerda()
+      break;
     }
     string=''
   }

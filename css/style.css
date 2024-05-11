@@ -25,7 +25,7 @@ p{
   background-color: black;
   width: 100%;
   height: 100%;
-  z-index: 4;
+  z-index: 6;
 }
 
 .pai-iori{
@@ -73,6 +73,9 @@ p{
    /* transform: scaleX(-1) rotate(360deg);  */
   margin: 0px 0px;
   cursor: pointer;
+}
+.virar{
+  transform: scaleX(-1) rotate(360deg);
 }
 .pai-inimigo {
   position: absolute;
@@ -143,4 +146,41 @@ p{
 }
 .iori-1:active,.iori-2:active,.iori-3:active{
   background-color: red;
+}
+.menu {
+  position: absolute;
+  background-color: rgb(3 3 3 / 58%);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.menu h1 {
+  margin: 20px;
+}
+
+.menu button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: rgba(250, 237, 237, 0.584);
+  font-size: 16px;
+  cursor: pointer;
+}
+.sprite-pai {
+  position: absolute;
+  width: 1818px; 
+  height: 10222px; 
+  z-index: 3;
+}
+.kyo-novo {
+  position: relative;
+  width: 80px; 
+  height: 130px;
+  top: 30px;
+  left: 300px;
+  background-image: url('../img/kyox.png'); 
+  margin: 0px 0px;
+  cursor: pointer;
+  z-index: 5;
 }
