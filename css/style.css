@@ -1,0 +1,146 @@
+*{
+  box-sizing: border-box;
+  width: 100%;
+ 
+}
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 240px;
+  height: 170px;
+ 
+}
+
+p{
+  color:aliceblue;
+}
+#loading{
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.pai-iori{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  width: 200px;
+  height: 150px;
+  top: 30%;
+  left: 40%;
+  border: solid red;
+  background-color: rgba(0, 255, 255, 0.352);
+  backdrop-filter: blur(20%);
+  z-index: 3;
+}
+#game{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+}
+.pai-cenario {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  zoom: 1.5;
+  z-index: 1; 
+}
+.pai-kyo {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100px;
+  height: 120px;
+  left: 135px;
+  zoom: 2;
+}
+
+.kyo {
+  position: relative;
+  z-index: 2; 
+  background: url('../img/kyo.png') -10px 0;
+   /* transform: scaleX(-1) rotate(360deg);  */
+  margin: 0px 0px;
+  cursor: pointer;
+}
+.pai-inimigo {
+  position: absolute;
+  top: 40px;
+  width: 150px;
+  height: 150px;
+  left: 200px;
+}
+
+.inimigo {
+  position: relative;
+  width: 150px; 
+  height: 150px;
+  background: url('../img/inimigo.png') no-repeat; 
+  background-size: cover;
+  /* transform: scaleX(-1) rotate(360deg);  */
+  z-index: 2;
+}
+.kyo, .inimigo {
+  border: 2px solid red; 
+}
+.cenario {
+  position: relative; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  z-index: 1; 
+  background: url('../img/cenario.jpg'); 
+}
+#tras:hover{
+  background-color: gold;
+}
+#frente:hover{
+  background-color: gold;
+}
+#pular:hover{
+  background-color: gold;
+}
+#soco:hover{
+  background-color: gold;
+}
+.iori-1{
+  background: url('../img/iori.png') 66px 270px;
+  margin: 0px 0px;
+  border: dashed 1px red;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.iori-2{
+  background: url('../img/iori.png') 66px 540px;
+  margin: 0px 0px;
+  border: dashed 1px red;
+  padding: 5px;
+  cursor: pointer;
+}
+.iori-3{
+  background: url('../img/iori.png') 66px 830px;
+  margin: 0px 0px;
+  border: dashed 1px red;
+  padding: 5px;
+  cursor: pointer;
+}
+.iori-1:hover,.iori-2:hover,.iori-3:hover{
+  border: solid 2px gold;
+  background-color: teal;
+}
+.iori-1:active,.iori-2:active,.iori-3:active{
+  background-color: red;
+}
