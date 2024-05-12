@@ -1,0 +1,47 @@
+details {
+  color: #ffffff;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+}
+
+summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  color: #ffffff;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+}
+.menu {
+  position: absolute;
+  background-color: rgb(3 3 3 / 58%);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.menu h1 {
+  margin: 20px;
+}
+
+.menu button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: rgba(250, 237, 237, 0.584);
+  font-size: 16px;
+  cursor: pointer;
+}

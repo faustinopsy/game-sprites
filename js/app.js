@@ -20,7 +20,6 @@ let intervaloAtualcenario= null;
 let string='';
 
 init();
-menu.init();
 const tempoBase = 200;
 document.addEventListener('keypress', (event) => {
     clearInterval(intervaloAtual); 
@@ -98,7 +97,7 @@ function verificaColisao(soco = false) {
         if (soco) {
             console.log('Kyo acertou o soco no inimigo!');
             inimigoElemento.style.backgroundColor = 'red';
-            setTimeout(() => inimigo.destruirInimigo(), 500);
+            inimigo.receberDano(10);
         }
     }
 }
@@ -107,8 +106,18 @@ setInterval(() => {
     kyo.atualizaPosicao();
     
 }, 50);
+const posicao =[
+  '10px','-50px','-105px' ,'-169px', '-230px',
+  '-300px','-370px','-430px','-510px'
+]
+let numero=0
+  setInterval(() => {
+    inimigo.chamaInimigo(posicao[numero]);
+    numero +=1
+    if(numero >= posicao.length){
+      numero=0
+    }
+ }, 150);
 
-setInterval(() => {
-    inimigo.chamaInimigo();
-}, Math.random() * (5000 - 2000) + 2000);
+
 
