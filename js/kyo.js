@@ -6,15 +6,7 @@ export class Kyo {
         this.velocidadeVertical = 10;
         this.alturaMaxima = 150;
         this.direcaoPulo = -1;
-        this.gravidade = -10;
-    }
-
-    correr() {
-        this.posicaoX -= 100;
-        this.kyo.style.background = `url(../img/kyo.png) ${this.posicaoX}px -200px`;
-        if (this.posicaoX <= -500) {
-            this.posicaoX = 0;
-        }
+        this.gravidade = -2;
     }
 
     pular(intervaloAtual) {
@@ -43,7 +35,20 @@ export class Kyo {
             }
         }
     }
-
+    parar(intervaloAtual) {
+        this.posicaoX = 0;
+        this.kyo.style.background = 'url(../img/kyo.png) -10px 0px';
+        this.kyo.style.left -= `${10}px`;
+        clearInterval(intervaloAtual);
+    }
+    correr() {
+        this.posicaoX -= 100;
+        console.log(this.posicaoX)
+        this.kyo.style.background = `url(../img/kyo.png) ${this.posicaoX}px -200px`;
+        if (this.posicaoX <= -500) {
+            this.posicaoX = 0;
+        }
+    }
     darSoco(intervaloAtual) {
         this.posicaoX += -99;
         this.kyo.style.background = `url(../img/kyo.png) ${this.posicaoX}px -300px`;
@@ -52,10 +57,13 @@ export class Kyo {
             this.parar(intervaloAtual)
         }
     }
-    parar(intervaloAtual) {
-        this.posicaoX = 0;
-        this.kyo.style.background = 'url(../img/kyo.png) -10px 0px';
-        this.kyo.style.left -= `${10}px`;
-        clearInterval(intervaloAtual);
+    especialinicio(intervaloAtual) {
+        this.posicaoX += -104;
+        this.kyo.style.background = `url(../img/kyo.png) ${this.posicaoX }px -440px`;
+        this.kyo.style.left += `5px`;
+        if (this.posicaoX <= -550) {
+            this.parar(intervaloAtual)
+        }
     }
+    
 }

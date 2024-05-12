@@ -7,6 +7,7 @@ body{
   display: flex;
   flex-direction: column;
   background-color: black;
+  overflow: hidden;
 }
 .container{
   display: flex;
@@ -46,6 +47,7 @@ p{
   flex-direction: row;
   position: relative;
   width: 100%;
+  
 }
 .pai-cenario {
   display: flex;
@@ -173,13 +175,12 @@ p{
   height: 10222px; 
   z-index: 3;
 }
-.kyo-novo {
+.kyo-x {
   position: relative;
-  width: 80px; 
-  height: 130px;
-  top: 30px;
+  width: 90px; 
+  height: 160px;
+  top: 10px;
   left: 300px;
-  background-image: url('../img/kyox.png'); 
   margin: 0px 0px;
   cursor: pointer;
   z-index: 5;

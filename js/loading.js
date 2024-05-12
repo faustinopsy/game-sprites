@@ -1,4 +1,10 @@
 import { Kyo } from './Kyo.js';
+import { Menu } from './Menu.js';
+
+
+const mainContainer = document.querySelector('#main-container');
+const menu = new Menu(mainContainer);
+menu.init();
 
 const kyoElemento = document.querySelector('.kyo');
 const kyo = new Kyo(kyoElemento);
@@ -13,7 +19,7 @@ const POSICAO_SOMADA = 270;
 const POSICAO_MAXIMA = 1200;
 let posicaoY=0;
 let  loop= null;
-let string='';
+
 export function init(){
   loop = setInterval(iniciarAnimacao, 600);
 }
@@ -40,34 +46,3 @@ function iniciarAnimacao(){
     pararAnimacao();
     }
 }
-function virarDireita(){
-  kyo.kyo.classList.add('virar')
-  
-}
-function virarEsquerda(){
-  kyo.kyo.classList.remove('virar')
-  
-}
-document.addEventListener ('keyup', (event) => {
-  
-  string +=event.key
-  console.log(string)
-  if(string.length >= 9){
-    switch(string){
-      case 'dev-Enter':
-        iorix()
-      break;
-      case 'zero-Enter':
-        init()
-      break;
-      case 'ArrowRight' :
-        virarDireita()
-      break;
-      case 'ArrowLeft' :
-        virarEsquerda()
-      break;
-    }
-    string=''
-  }
-  
-});

@@ -4,23 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <title>teste sprite</title>
+  <title>Teste Sprite</title>
 </head>
-<body>
+<body><button id="btnJump" style="height: 70px;">Pular</button>
 <div id="game">
   <div class="pai-cenario">
     <div class="cenario">
-
-  <div class="sprite-pai">
-    <div class="kyo-novo"></div>
+      <div class="sprite-pai">
+        <div class="kyo-x"></div>
+      </div>
+    </div>
   </div>
+  
+
 </div>
-</div>
-</div>
-<script>
-  const kyoElemento = document.querySelector('.kyo-novo');
-  let posicaoX = 80;                               // baixo - cima
-  kyoElemento.style.background = `url(img/kyox.png) -200px -420px`;
+
+<script >
+
+ 
+const kyoElemento = document.querySelector('.kyo-x');
+  kyoElemento.style.background = `url(img/kyox.png)`;
+  const puloBaixo = [
+    '0px -420px', '-60px -420px', '-130px -420px', '-200px -420px',
+    '-310px -420px', '-380px -420px', '-460px -420px', '-520px -420px', '-580px -420px'
+  ];
+  const pulolAlto = [
+    '0px -560px', '-60px -560px', '-130px -560px', '-200px -560px',
+    '-310px -560px', '-380px -560px', '-460px -560px', '-520px -560px', '-580px -560px'
+  ];
+  const correr = [
+    '0px -250px', '-60px -250px', '-130px -250px', '-200px -250px',
+    '-310px -250px', '-380px -250px', '-460px -250px', '-520px -250px', '-580px -250px'
+  ];
+  let currentFrame = 0;
+
+  function animateSprite() {
+    if (currentFrame >= correr.length) {
+      currentFrame = 0; 
+    }
+    kyoElemento.style.backgroundPosition = correr[currentFrame++];
+  }
+
+  setInterval(animateSprite, 500); 
+
+
 </script>
 </body>
 </html>
