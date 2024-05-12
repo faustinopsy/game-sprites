@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+  width: 100%;
+ 
+}
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  overflow: hidden;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 240px;
+  height: 170px;
+ 
+}
+
+p{
+  color:aliceblue;
+}

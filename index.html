@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/cenario.css">
+  <link rel="stylesheet" href="css/heroi.css">
+  <link rel="stylesheet" href="css/inimigo.css">
   <title>teste sprite</title>
 </head>
 <body>
@@ -13,24 +18,30 @@
       <div class="iori"><h2>dev-</h2><h2>zero-</h2></div>
     </div>
   </div>
+  <div id="main-container"></div>
     <div id="game"> 
       <div class="pai-cenario">
         <div class="cenario"></div>
       </div>
     <div class="pai-kyo">
-      <div class="kyo"></div>
+      <div class="kyo">
+        <div id="vidakyo"></div>
+      </div>
     </div>
     <div class="pai-inimigo">
-      <div class="inimigo"></div>
+      <div class="inimigo">
+        <div id="vidainimigo"></div>
+      </div>
     </div>
     </div>
-    <p>Soco = s</p>
-      <p>Pular = w</p>
-      <p>Correr = a</p>
-  
+    <p>Soco = s || Pular = w || Correr = a || Especial = x</p>
+    <p>Escreva: "dev-" e aperte Enter para voltar ao menu</p>
+    <p>setas do teclado vira o lado do personagem</p>
+  <div class="sprite"></div>
   
 
 
 <script type="module" src="js/app.js"></script>
+
 </body>
 </html>

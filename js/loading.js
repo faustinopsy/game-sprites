@@ -1,5 +1,17 @@
+import { Kyo } from './Kyo.js';
+import { Menu } from './Menu.js';
+
+
+const mainContainer = document.querySelector('#main-container');
+const menu = new Menu(mainContainer);
+menu.init();
+
+const kyoElemento = document.querySelector('.kyo');
+const kyo = new Kyo(kyoElemento);
+
 const container0 = document.querySelector(`#loading`);
 const container3 = document.querySelector(`.pai-iori`);
+
 const iori = document.querySelector(`.iori`);
 const BACKGROUND_INICIAL = `url(../img/iori.png) -270px 0px`;
 const BACKGROUND_ATIVO = `url(../img/iori.png) -270px -270px`;
@@ -7,7 +19,7 @@ const POSICAO_SOMADA = 270;
 const POSICAO_MAXIMA = 1200;
 let posicaoY=0;
 let  loop= null;
-let string='';
+
 export function init(){
   loop = setInterval(iniciarAnimacao, 600);
 }
@@ -34,21 +46,3 @@ function iniciarAnimacao(){
     pararAnimacao();
     }
 }
-
-document.addEventListener ('keyup', (event) => {
-  
-  string +=event.key
-  if(string.length >= 9){
-    switch(string){
-      case 'dev-Enter':
-        iorix()
-      break;
-      case 'zero-Enter':
-        init()
-      break;
-      
-    }
-    string=''
-  }
-  
-});
