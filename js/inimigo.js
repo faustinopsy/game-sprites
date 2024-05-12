@@ -4,7 +4,7 @@ export class Inimigo {
         this.visivel = true;
         this.vida = 100; 
     }
-
+ 
     chamaInimigo(posicao) {
         if(this.visivel ){
             this.inimigo.style.display = 'block';

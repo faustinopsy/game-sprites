@@ -1,4 +1,4 @@
-import { Kyo } from './Kyo.js';
+import { Kyo } from './kyo.js';
 import { Menu } from './Menu.js';
 
 
