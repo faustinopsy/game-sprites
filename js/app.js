@@ -1,5 +1,5 @@
-import { Kyo } from './Kyo.js';
-import { Inimigo } from './Inimigo.js';
+import { Kyo } from './kyo.js';
+import { Inimigo } from './inimigo.js';
 import { Cenario } from './Cenario.js';
 import { Menu } from './Menu.js';
 import { init } from './loading.js';
