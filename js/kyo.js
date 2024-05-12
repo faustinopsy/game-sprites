@@ -3,10 +3,10 @@ export class Kyo {
         this.kyo = elemento;
         this.posicaoX = 0;
         this.estaPulando = false;
-        this.velocidadeVertical = 10;
+        this.velocidadeVertical = 200;
         this.alturaMaxima = 150;
         this.direcaoPulo = -1;
-        this.gravidade = -2;
+        this.gravidade = 2;
     }
 
     pular(intervaloAtual) {
@@ -24,14 +24,17 @@ export class Kyo {
             let posicaoAtual = parseInt(this.kyo.style.bottom || '0px', 10);
             let posicaoHorizontal = parseInt(this.kyo.style.left || '0px', 10) + (10 * this.direcaoPulo);
 
-            this.velocidadeVertical += this.gravidade;
+            this.velocidadeVertical -= this.gravidade;
             posicaoAtual += this.velocidadeVertical;
+            this.kyo.style.background = `url(../img/kyo.png) -230px -100px`;
+            this.kyo.style.left += `10px`;
             this.kyo.style.bottom = `${posicaoAtual}px`;
             this.kyo.style.left = `${posicaoHorizontal}px`;
 
             if (posicaoAtual <= 0) {
                 this.kyo.style.bottom = '0px';
                 this.estaPulando = false;
+                this.parar(10)
             }
         }
     }
@@ -60,7 +63,7 @@ export class Kyo {
     especialinicio(intervaloAtual) {
         this.posicaoX += -104;
         this.kyo.style.background = `url(../img/kyo.png) ${this.posicaoX }px -440px`;
-        this.kyo.style.left += `5px`;
+        this.kyo.style.left += `10px`;
         if (this.posicaoX <= -550) {
             this.parar(intervaloAtual)
         }

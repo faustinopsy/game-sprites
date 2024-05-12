@@ -15,22 +15,44 @@ export class Menu {
             <div class="menu">
                 <h1>Bem-vindo ao Jogo!</h1>
                 <button id="inicia-game">Iniciar Jogo</button>
-                <button id="options">Opções</button>
+                <details>
+                <summary id="opcao">Opções</summary>
+                <div>
+                    <label for="velocidadeVertical">Velocidade Vertical: <span id="velocidadeValor">200</span></label>
+                    <input type="range" id="velocidadeVertical" min="-20" max="2000" value="200">
+                </div>
+                <div>
+                    <label for="gravidade">Gravidade: <span id="gravidadeValor">2</span></label>
+                    <input type="range" id="gravidade" min="1" max="10" value="2">
+            </div>
+                </details>
             </div>
         `;
         this.container.innerHTML = menuHtml;
     }
 
     afterRender() {
-        const iniciaButton = this.container.querySelector('#inicia-game');
-        const optionsButton = this.container.querySelector('#options');
+        const iniciaopcaoBotao = this.container.querySelector('#inicia-game');
+        const opcaoBotao = this.container.querySelector('#opcao');
+        const velocidadeSlider = this.container.querySelector('#velocidadeVertical');
+        const gravidadeSlider = this.container.querySelector('#gravidade');
 
-        iniciaButton.addEventListener('click', () => {
+        iniciaopcaoBotao.addEventListener('click', () => {
             this.iniciaJogo();
         });
 
-        optionsButton.addEventListener('click', () => {
+        opcaoBotao.addEventListener('click', () => {
             this.mostrOpcoes();
+        });
+
+        velocidadeSlider.addEventListener('input', (e) => {
+            document.getElementById('velocidadeValor').textContent = e.target.value;
+            window.myKyo.velocidadeVertical = parseInt(e.target.value, 10);
+        });
+
+        gravidadeSlider.addEventListener('input', (e) => {
+            document.getElementById('gravidadeValor').textContent = e.target.value;
+            window.myKyo.gravidade = parseInt(e.target.value, 10);
         });
     }
 
@@ -41,5 +63,6 @@ export class Menu {
 
     mostrOpcoes() {
         console.log('Mostrando opções...');
+        console.log(myKyo)
     }
 }

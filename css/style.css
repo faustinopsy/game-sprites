@@ -55,6 +55,7 @@ p{
   position: absolute;
   width: 100%;
   height: 160px;
+  top:120px;
   zoom: 1.5;
   z-index: 1; 
 }
@@ -64,27 +65,29 @@ p{
   position: absolute;
   width: 100px;
   height: 120px;
+  top: 100px;
   left: 135px;
-  zoom: 2;
 }
 
 .kyo {
   position: relative;
   z-index: 2; 
   background: url('../img/kyo.png') -10px 0;
-   /* transform: scaleX(-1) rotate(360deg);  */
   margin: 0px 0px;
   cursor: pointer;
+  transform: scale(2);
+  top: 130px;
+  left: 235px;
 }
-.virar{
-  transform: scaleX(-1) rotate(360deg);
-}
+
 .pai-inimigo {
+  display: flex;
+  flex-direction: row;
   position: absolute;
-  top: 40px;
   width: 150px;
   height: 150px;
-  left: 200px;
+  top: 220px;
+  left: 220px;
 }
 
 .inimigo {
@@ -93,11 +96,14 @@ p{
   height: 150px;
   background: url('../img/inimigo.png') no-repeat; 
   background-size: cover;
-  /* transform: scaleX(-1) rotate(360deg);  */
   z-index: 2;
 }
 .kyo, .inimigo {
   border: 2px solid red; 
+}
+.virar{
+  transform: scaleX(-1) rotate(360deg) scale(2);;
+  
 }
 .cenario {
   position: relative; 
@@ -120,34 +126,32 @@ p{
 #soco:hover{
   background-color: gold;
 }
-.iori-1{
-  background: url('../img/iori.png') 66px 270px;
-  margin: 0px 0px;
-  border: dashed 1px red;
-  padding: 5px;
+details {
+  color: #ffffff;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+}
+
+summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  color: #ffffff;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
   cursor: pointer;
 }
 
-.iori-2{
-  background: url('../img/iori.png') 66px 540px;
-  margin: 0px 0px;
-  border: dashed 1px red;
-  padding: 5px;
-  cursor: pointer;
+details[open] {
+  padding: 0.5em;
 }
-.iori-3{
-  background: url('../img/iori.png') 66px 830px;
-  margin: 0px 0px;
-  border: dashed 1px red;
-  padding: 5px;
-  cursor: pointer;
-}
-.iori-1:hover,.iori-2:hover,.iori-3:hover{
-  border: solid 2px gold;
-  background-color: teal;
-}
-.iori-1:active,.iori-2:active,.iori-3:active{
-  background-color: red;
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5em;
+  color: #ffffff;
 }
 .menu {
   position: absolute;

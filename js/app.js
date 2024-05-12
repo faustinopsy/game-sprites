@@ -11,6 +11,7 @@ const kyoElemento = document.querySelector('.kyo');
 const inimigoElemento = document.querySelector('.inimigo');
 const cenarioElemento = document.querySelector('.cenario');
 const kyo = new Kyo(kyoElemento);
+window.myKyo = kyo;
 const inimigo = new Inimigo(inimigoElemento);
 const cenario = new Cenario(cenarioElemento);
 
@@ -20,36 +21,34 @@ let string='';
 
 init();
 menu.init();
-
+const tempoBase = 200;
 document.addEventListener('keypress', (event) => {
-    if (intervaloAtual) {
-        clearInterval(intervaloAtual);
-    }
-    if (intervaloAtualcenario) {
-        clearInterval(intervaloAtualcenario);
-    }
+    clearInterval(intervaloAtual); 
+    clearInterval(intervaloAtualcenario);
+
+    let intervaloTempo = tempoBase / window.myKyo.velocidadeVertical;
     switch (event.key) {
         case 'w':
             intervaloAtual = setInterval(() => kyo.pular(intervaloAtual), 200); 
             break;
         case 'a':
-            intervaloAtual = setInterval(() => kyo.correr(), 200);
-            intervaloAtualcenario = setInterval(() => cenario.atualizaCenario(kyo.posicaoX), 200);
+            intervaloAtual = setInterval(() => kyo.correr(), tempoBase);
+            intervaloAtualcenario = setInterval(() => cenario.atualizaCenario(kyo.posicaoX), tempoBase);
             break;
         case 'd':
             kyo.parar(intervaloAtual); 
             cenario.pararCenario(intervaloAtualcenario);
             break;
         case 's':
-            intervaloAtual = setInterval(() => kyo.darSoco(intervaloAtual), 200); 
+            intervaloAtual = setInterval(() => kyo.darSoco(intervaloAtual), tempoBase); 
             verificaColisao(true);
             break;
             case 'x':
-            intervaloAtual = setInterval(() => kyo.especialinicio(intervaloAtual), 150);
+            intervaloAtual = setInterval(() => kyo.especialinicio(intervaloAtual), tempoBase);
             verificaColisao(true);
             break;
         default:
-            intervaloAtual = setInterval(() => kyo.correr(), 200);
+            intervaloAtual = setInterval(() => kyo.correr(), tempoBase);
             break;
     }
 });
@@ -60,6 +59,7 @@ document.addEventListener('keypress', (event) => {
     if(string.length >= 9){
       switch(string){
         case 'dev-Enter':
+          kyo.parar(intervaloAtual)
           menu.init()
         break;
         case 'zero-Enter':
@@ -77,17 +77,20 @@ document.addEventListener('keypress', (event) => {
     function virarDireita(){
         kyo.kyo.classList.add('virar')
         cenario.posicao=1
+        kyo.direcaoPulo=-1
       }
       function virarEsquerda(){
         kyo.kyo.classList.remove('virar')
         cenario.posicao=2
+        kyo.direcaoPulo=1
       }
   });
 function verificaColisao(soco = false) {
     let kyoRect = kyo.kyo.getBoundingClientRect();
     let inimigoRect = inimigo.inimigo.getBoundingClientRect();
-
-    const tolerancia = 31;
+    // console.log(kyoRect)
+    // console.log(inimigoRect)
+    const tolerancia = 1;
     if (kyoRect.right > inimigoRect.left + tolerancia &&
         kyoRect.left < inimigoRect.right - tolerancia &&
         kyoRect.bottom > inimigoRect.top + tolerancia &&
