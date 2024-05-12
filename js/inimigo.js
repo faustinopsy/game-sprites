@@ -8,7 +8,7 @@ export class Inimigo {
     chamaInimigo(posicao) {
         if(this.visivel ){
             this.inimigo.style.display = 'block';
-            this.inimigo.style.background = `url(../img/orochi-chris.png) ${posicao} -2970px`;
+            this.inimigo.style.background = `url(https://faustinopsy.github.io/game-sprites/img/orochi-chris.png) ${posicao} -2970px`;
             this.visivel = true;
         }
         

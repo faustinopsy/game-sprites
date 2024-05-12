@@ -10,7 +10,7 @@
 
 .inimigo {
   position: relative;
-    background: url('../img/orochi-chris.png') -510px -2970px;
+    background: url('https://faustinopsy.github.io/game-sprites/img/orochi-chris.png') -510px -2970px;
     width: 70px;
     height: 150px;
     z-index: 2;
