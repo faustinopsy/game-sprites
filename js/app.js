@@ -39,6 +39,7 @@ pula.style.backgroundColor = 'teal';
 pula.style.width = '66px'
 pula.textContent= "pular"
 pula.style.borderRadius= '20px 0 20px';
+
 container.appendChild(frente)
 container.appendChild(pula)
 
