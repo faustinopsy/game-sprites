@@ -115,7 +115,12 @@ document.addEventListener('keypress', (event) => {
   });
 
  
-
+  frente.addEventListener('click', function(){
+    clearInterval(intervaloAtual); 
+    clearInterval(intervaloAtualcenario);
+    kyo.parar(intervaloAtual); 
+    cenario.pararCenario(intervaloAtualcenario);
+  });
   soco.addEventListener('click', function(){
     clearInterval(intervaloAtual); 
     clearInterval(intervaloAtualcenario);
