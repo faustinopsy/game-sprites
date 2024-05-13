@@ -1,4 +1,10 @@
-#tras:hover{
+
+
+@media (max-width: 900px) {
+
+}
+@media (max-width: 600px) {
+  #tras:hover{
     background-color: gold;
   }
   #frente:hover{
@@ -10,3 +16,19 @@
   #soco:hover{
     background-color: gold;
   }
+}
+@media (max-width: 300px) {
+  #tras:hover{
+    background-color: gold;
+  }
+  #frente:hover{
+    background-color: gold;
+  }
+  #pular:hover{
+    background-color: gold;
+  }
+  #soco:hover{
+    background-color: gold;
+  }
+  
+}

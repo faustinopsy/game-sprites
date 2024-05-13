@@ -14,6 +14,7 @@ const kyo = new Kyo(kyoElemento);
 window.myKyo = kyo;
 const inimigo = new Inimigo(inimigoElemento);
 const cenario = new Cenario(cenarioElemento);
+const container = document.querySelector('.controle')
 
 let intervaloAtual = null;
 let intervaloAtualcenario= null;
@@ -84,6 +85,47 @@ document.addEventListener('keypress', (event) => {
         kyo.direcaoPulo=1
       }
   });
+
+  const frente = document.createElement('button');
+  frente.id = 'frente';
+  frente.style.backgroundColor = 'teal';
+  frente.textContent= "parado"
+  frente.style.width = '66px'
+  const tras = document.createElement('button');
+  frente.id = 'tras';
+  tras.style.backgroundColor = 'teal';
+  tras.style.width = '66px'
+  tras.textContent= "corre"
+  
+  const soco = document.createElement('button');
+  soco.id = 'tras';
+  soco.style.backgroundColor = 'teal';
+  soco.style.width = '66px'
+  soco.textContent= "soco"
+  const pula = document.createElement('button');
+  pula.id = 'tras';
+  pula.style.backgroundColor = 'teal';
+  pula.style.width = '66px'
+  pula.textContent= "pular"
+  
+  soco.addEventListener('click', function(){
+    clearInterval(intervaloAtual); 
+    clearInterval(intervaloAtualcenario);
+    intervaloAtual = setInterval(() => kyo.darSoco(intervaloAtual), tempoBase); 
+    verificaColisao(true);
+  });
+  pula.addEventListener('click', function(){
+    clearInterval(intervaloAtual); 
+    clearInterval(intervaloAtualcenario);
+    intervaloAtual = setInterval(() => kyo.pular(intervaloAtual), 200);
+  });
+  tras.addEventListener('click', function(){
+    clearInterval(intervaloAtual); 
+    clearInterval(intervaloAtualcenario);
+    intervaloAtual = setInterval(() => kyo.correr(), tempoBase);
+    intervaloAtualcenario = setInterval(() => cenario.atualizaCenario(kyo.posicaoX), tempoBase);
+  });
+
 function verificaColisao(soco = false) {
     let kyoRect = kyo.kyo.getBoundingClientRect();
     let inimigoRect = inimigo.inimigo.getBoundingClientRect();
