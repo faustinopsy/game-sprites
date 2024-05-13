@@ -14,7 +14,35 @@ const kyo = new Kyo(kyoElemento);
 window.myKyo = kyo;
 const inimigo = new Inimigo(inimigoElemento);
 const cenario = new Cenario(cenarioElemento);
+
 const container = document.querySelector('.controle')
+const frente = document.createElement('button');
+frente.id = 'frente';
+frente.style.backgroundColor = 'teal';
+frente.textContent= "parado"
+frente.style.width = '66px'
+const tras = document.createElement('button');
+frente.id = 'tras';
+tras.style.backgroundColor = 'teal';
+tras.style.width = '66px'
+tras.textContent= "corre"
+
+const soco = document.createElement('button');
+soco.id = 'tras';
+soco.style.backgroundColor = 'teal';
+soco.style.width = '66px'
+soco.textContent= "soco"
+const pula = document.createElement('button');
+pula.id = 'tras';
+pula.style.backgroundColor = 'teal';
+pula.style.width = '66px'
+pula.textContent= "pular"
+container.appendChild(frente)
+container.appendChild(tras)
+container.appendChild(soco)
+container.appendChild(pula)
+
+
 
 let intervaloAtual = null;
 let intervaloAtualcenario= null;
@@ -86,31 +114,7 @@ document.addEventListener('keypress', (event) => {
       }
   });
 
-  const frente = document.createElement('button');
-  frente.id = 'frente';
-  frente.style.backgroundColor = 'teal';
-  frente.textContent= "parado"
-  frente.style.width = '66px'
-  const tras = document.createElement('button');
-  frente.id = 'tras';
-  tras.style.backgroundColor = 'teal';
-  tras.style.width = '66px'
-  tras.textContent= "corre"
-  
-  const soco = document.createElement('button');
-  soco.id = 'tras';
-  soco.style.backgroundColor = 'teal';
-  soco.style.width = '66px'
-  soco.textContent= "soco"
-  const pula = document.createElement('button');
-  pula.id = 'tras';
-  pula.style.backgroundColor = 'teal';
-  pula.style.width = '66px'
-  pula.textContent= "pular"
-  container.appendChild(frente)
-  container.appendChild(tras)
-  container.appendChild(soco)
-  container.appendChild(pula)
+ 
 
   soco.addEventListener('click', function(){
     clearInterval(intervaloAtual); 
