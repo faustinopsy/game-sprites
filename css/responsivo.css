@@ -5,6 +5,12 @@
   border: solid 2px red;
   top: 480px;
   z-index: 8;
+  display: grid;
+  grid-column: 2fr 2fr;
+  grid-template-columns: 2fr 2fr;
+  justify-items: start;
+  align-items: start;
+  justify-content: center;
 }
 @media (max-width: 900px) {
 

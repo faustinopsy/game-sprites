@@ -8,6 +8,7 @@ body{
   flex-direction: column;
   background-color: black;
   overflow: hidden;
+  width: 100vh;
 }
 .container{
   display: flex;

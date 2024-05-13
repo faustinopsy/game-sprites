@@ -32,15 +32,19 @@ soco.id = 'tras';
 soco.style.backgroundColor = 'teal';
 soco.style.width = '66px'
 soco.textContent= "soco"
+soco.style.borderRadius= '20px 0 20px';
 const pula = document.createElement('button');
 pula.id = 'tras';
 pula.style.backgroundColor = 'teal';
 pula.style.width = '66px'
 pula.textContent= "pular"
+pula.style.borderRadius= '20px 0 20px';
 container.appendChild(frente)
+container.appendChild(pula)
+
 container.appendChild(tras)
 container.appendChild(soco)
-container.appendChild(pula)
+
 
 
 

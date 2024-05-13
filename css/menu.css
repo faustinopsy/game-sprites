@@ -29,7 +29,7 @@ details[open] summary {
   position: absolute;
   background-color: rgb(3 3 3 / 58%);
   backdrop-filter: blur(10px);
-  width: 100%;
+  width: 100vh;
   height: 100%;
   z-index: 5;
 }
