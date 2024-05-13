@@ -107,7 +107,11 @@ document.addEventListener('keypress', (event) => {
   pula.style.backgroundColor = 'teal';
   pula.style.width = '66px'
   pula.textContent= "pular"
-  
+  container.appendChild(frente)
+  container.appendChild(tras)
+  container.appendChild(soco)
+  container.appendChild(pula)
+
   soco.addEventListener('click', function(){
     clearInterval(intervaloAtual); 
     clearInterval(intervaloAtualcenario);
