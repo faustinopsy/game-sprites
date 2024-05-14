@@ -3,19 +3,19 @@
 .controle {
   position: fixed;
   border: solid 2px red;
-  top: 480px;
-  z-index: 8;
-  display: grid;
-  grid-column: 2fr 2fr;
-  grid-template-columns: 2fr 2fr;
-  justify-items: start;
-  align-items: start;
-  justify-content: center;
+  top: 380px;
+  z-index: 4;
+  display: flex;
+  justify-items: center;
 }
 @media (max-width: 900px) {
 
 }
 @media (max-width: 600px) {
+  .pai-kyo, .pai-inimigo, .cenario {
+    transform: scale(1);  
+    z-index: 2;
+  }
   #tras:hover{
     background-color: gold;
   }

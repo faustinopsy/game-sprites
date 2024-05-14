@@ -4,8 +4,8 @@
   position: absolute;
   width: 100px;
   height: 120px;
-  top: 100px;
-  left: 235px;
+  top: 240px;
+  left: 280px;
 }
 
 .kyo {
@@ -15,8 +15,6 @@
   margin: 0px 0px;
   cursor: pointer;
   transform: scale(2);
-  top: 140px;
-  left: 230px;
 }
 .kyo, .inimigo {
   /* border: 2px solid red;  */
