@@ -33,11 +33,13 @@ export class Inimigo {
         location.reload()
     }
     empurrarInimigo() {
-        let posicaoAtual = this.inimigo.style.right;
-        const forcaDeEmpurrao = 50;
-        this.inimigo.style.right = `${posicaoAtual + forcaDeEmpurrao}px`;
+        this.posicaoAtual = parseInt(this.inimigo.style.right || '0px', 10);
+        const forcaDeEmpurrao = 30;
+        console.log(this.inimigo.clientWidth)
+        this.inimigo.style.right = `${this.posicaoAtual + forcaDeEmpurrao}px`;
         const larguraDoJogo = document.getElementById('game').clientWidth;
-        if (posicaoAtual + forcaDeEmpurrao > larguraDoJogo - this.inimigo.clientWidth) {
+        console.log(this.inimigo.style.right)
+        if (this.posicaoAtual + forcaDeEmpurrao > larguraDoJogo - this.inimigo.clientWidth) {
             this.inimigo.style.right = `${larguraDoJogo - this.inimigo.clientWidth}px`;
         }
     }
