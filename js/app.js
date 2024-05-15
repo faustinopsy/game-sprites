@@ -5,8 +5,10 @@ import { Menu } from './Menu.js';
 import { init } from './loading.js';
 import { Controles } from './controle.js';
 import {MonitorarPerformance} from "./MonitorarPerformance.js";
+import {RegistarSW} from "./RegistrarSw.js";
 //https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver
-const monitor = new MonitorarPerformance();
+new MonitorarPerformance();
+new RegistarSW();
 
 const mainContainer = document.querySelector('#main-container');
 const menu = new Menu(mainContainer);
@@ -23,7 +25,6 @@ const controles = new Controles(document.querySelector('.controle'), kyo,inimigo
 
 init();
 
-
 setInterval(() => {
     kyo.atualizaPosicao();
     
@@ -39,7 +40,9 @@ let numero=0
     if(numero >= posicao.length){
       numero=0
     }
- }, 500);
+ }, 2000);
+
+
 
 
 

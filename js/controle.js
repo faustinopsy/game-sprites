@@ -99,7 +99,6 @@ export class Controles {
          
           document.addEventListener ('keyup', (event) => {
             this.string +=event.key
-            console.log(this.string)
             if(this.string.length >= 9){
               switch(this.string){
                 case 'dev-Enter':
@@ -164,8 +163,13 @@ export class Controles {
             kyoRect.top < inimigoRect.bottom - tolerancia) {
             if (soco) {
                 console.log('Kyo acertou o soco no inimigo!');
-                inimigoElemento.style.backgroundColor = 'red';
+                setTimeout(() => {
+                    inimigoElemento.style.filter= 'brightness(1)';
+                    inimigoElemento.style.background = `url(https://faustinopsy.github.io/game-sprites/img/orochi-chris.png) -254px -3161px`;
+                }, 500);
+                inimigoElemento.style.filter= 'brightness(0.5)';
                 this.inimigo.receberDano(10);
+                this.inimigo.empurrarInimigo();
             }
         }
     }

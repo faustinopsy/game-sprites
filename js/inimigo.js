@@ -32,4 +32,14 @@ export class Inimigo {
         alert('Inimigo derrotado! Jogo encerrado.');
         location.reload()
     }
+    empurrarInimigo() {
+        let posicaoAtual = this.inimigo.style.right;
+        const forcaDeEmpurrao = 50;
+        this.inimigo.style.right = `${posicaoAtual + forcaDeEmpurrao}px`;
+        const larguraDoJogo = document.getElementById('game').clientWidth;
+        if (posicaoAtual + forcaDeEmpurrao > larguraDoJogo - this.inimigo.clientWidth) {
+            this.inimigo.style.right = `${larguraDoJogo - this.inimigo.clientWidth}px`;
+        }
+    }
+    
 }
