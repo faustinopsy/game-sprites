@@ -102,7 +102,7 @@ export class Controles {
             if(this.string.length >= 9){
               switch(this.string){
                 case 'dev-Enter':
-                  kyo.parar(this.intervaloAtual)
+                  this.kyo.parar(this.intervaloAtual)
                   this.menu.init()
                 break;
                 case 'ArrowRight' :
