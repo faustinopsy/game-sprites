@@ -21,7 +21,7 @@ O código é organizado em várias classes para encapsular diferentes aspectos d
 - Menu: Classe que lida com a interface de usuário inicial e as opções de jogo, permitindo ao jogador iniciar o jogo e ajustar configurações como a velocidade e a gravidade.
 ## Funcionalidades de Interatividade
 O jogo implementa funcionalidades interativas avançadas, como:
-
+<img src='./img/game.PNG'>
 - Detecção de Colisões: Uso de getBoundingClientRect() para detectar interações entre o personagem principal e os inimigos.
 - Controle de Animação: Manipulação de background positions para animar sprites baseando-se em uma série de imagens contidas em um único arquivo.
 Ajuste Dinâmico de Configurações: Utilização de elementos de interface como sliders para ajustar configurações do jogo em tempo real.
