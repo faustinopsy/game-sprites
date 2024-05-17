@@ -59,7 +59,7 @@ export class Kyo extends Personagem {
 
     parar(intervaloAtual) {
         this.posicaoX = 0;
-        this.elemento.style.background = 'url(./img/kyo.png) -10px 0px';
+        this.elemento.style.background = 'url(./img/kyo.png) -30px 0px';
         this.ganharVida();
         clearInterval(intervaloAtual);
     }
