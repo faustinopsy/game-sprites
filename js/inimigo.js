@@ -36,7 +36,8 @@ export class Inimigo {
         const forcaDeEmpurrao = 50;
         this.inimigo.style.right = `${posicaoAtual + forcaDeEmpurrao}px`;
         const larguraDoJogo = document.getElementById('game').clientWidth;
-        if (posicaoAtual + forcaDeEmpurrao > larguraDoJogo - this.inimigo.clientWidth) {
+        console.log(this.inimigo.style.right)
+        if (this.posicaoAtual + forcaDeEmpurrao > larguraDoJogo - this.inimigo.clientWidth) {
             this.inimigo.style.right = `${larguraDoJogo - this.inimigo.clientWidth}px`;
         }
     }
