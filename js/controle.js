@@ -10,12 +10,12 @@ export class Controles {
         this.tempoBase = 200; 
         this.string = null;
         this.init();
+        
     }
 
     init() {
         this.criarBotoesElementos();
         this.adicionarEventosBotoes();
-
         
     }
     virarDireita(){
@@ -73,26 +73,22 @@ export class Controles {
             let intervaloTempo = this.tempoBase / window.myKyo.velocidadeVertical;
             switch (event.key) {
                 case 'w':
-                    this.intervaloAtual = setInterval(() => this.kyo.pular(this.intervaloAtual), 200); 
+                    this.acaoPular()
                     break;
                 case 'a':
-                    this.intervaloAtual = setInterval(() => this.kyo.correr(), this.tempoBase);
-                    this.intervaloAtualcenario = setInterval(() => this.cenario.atualizaCenario(this.kyo.posicaoX), this.tempoBase);
+                    this.acaoCorrer()
                     break;
                 case 'd':
-                    this.kyo.parar(this.intervaloAtual); 
-                    this.cenario.pararCenario(this.intervaloAtualCenario);
+                    this.acaoParar()
                     break;
                 case 's':
-                    this.intervaloAtual = setInterval(() => this.kyo.darSoco(this.intervaloAtual), this.tempoBase); 
-                    this.verificaColisao(true);
+                    this.acaoSoco()
                     break;
-                    case 'x':
-                        this.intervaloAtual = setInterval(() => this.kyo.especialinicio(this.intervaloAtual), this.tempoBase);
-                    this.verificaColisao(true);
+                case 'x':
+                    this.acaoEspecial()
                     break;
                 default:
-                    this.intervaloAtual = setInterval(() => this.kyo.correr(), this.tempoBase);
+                    this.acaoCorrer()
                     break;
             }
         });
@@ -142,20 +138,27 @@ export class Controles {
 
     acaoCorrer() {
         this.limparTempo();
-        this.intervaloAtual = setInterval(() => this.kyo.correr(), this.tempoBase);
+        this.intervaloAtual = setInterval(() => this.kyo.correr(this.intervaloAtual), this.tempoBase);
         this.intervaloAtualCenario = setInterval(() => this.cenario.atualizaCenario(this.kyo.posicaoX), this.tempoBase);
     }
 
     limparTempo() {
-        clearInterval(this.intervaloAtual);
-        clearInterval(this.intervaloAtualCenario);
+        if (this.intervaloAtual) {
+            clearInterval(this.intervaloAtual);
+            this.intervaloAtual = null;
+        }
+        if (this.intervaloAtualCenario) {
+            clearInterval(this.intervaloAtualCenario);
+            this.intervaloAtualCenario = null;
+        }
     }
     verificaColisao(soco = false) {
         const kyoElemento = document.querySelector('.kyo');
         const inimigoElemento = document.querySelector('.inimigo');
         let kyoRect = kyoElemento.getBoundingClientRect();
         let inimigoRect = inimigoElemento.getBoundingClientRect();
-        // console.log(inimigoRect)
+        console.log(kyoRect)
+        console.log(inimigoRect)
         const tolerancia = 1;
         if (kyoRect.right > inimigoRect.left + tolerancia &&
             kyoRect.left < inimigoRect.right - tolerancia &&
@@ -165,7 +168,7 @@ export class Controles {
                 console.log('Kyo acertou o soco no inimigo!');
                 setTimeout(() => {
                     inimigoElemento.style.filter= 'brightness(1)';
-                    inimigoElemento.style.background = `url(https://faustinopsy.github.io/game-sprites/img/orochi-chris.png) -254px -3161px`;
+                    inimigoElemento.style.background = `url(./img/orochi-chris.png) -254px -3161px`;
                 }, 500);
                 inimigoElemento.style.filter= 'brightness(0.5)';
                 this.inimigo.receberDano(10);

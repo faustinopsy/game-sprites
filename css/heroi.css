@@ -11,7 +11,7 @@
 .kyo {
   position: relative;
   z-index: 2; 
-  background: url('https://faustinopsy.github.io/game-sprites/img/kyo.png') -10px 0;
+  background: url(../img/kyo.png) -10px 0;
   margin: 0px 0px;
   cursor: pointer;
   transform: scale(2);
@@ -20,7 +20,7 @@
   /* border: 2px solid red;  */
 }
 .virar{
-  transform: scaleX(-1) rotate(360deg) scale(2);;
+  transform: scaleX(-1) rotate(360deg) scale(2);
   
 }
 #vidakyo{

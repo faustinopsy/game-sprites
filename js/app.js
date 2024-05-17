@@ -17,7 +17,7 @@ const inimigoElemento = document.querySelector('.inimigo');
 const cenarioElemento = document.querySelector('.cenario');
 const kyo = new Kyo(kyoElemento);
 window.myKyo = kyo;
-const inimigo = new Inimigo(inimigoElemento);
+const inimigo = new Inimigo(inimigoElemento,kyoElemento);
 const cenario = new Cenario(cenarioElemento);
 const controles = new Controles(document.querySelector('.controle'), kyo,inimigo, cenario,menu);
 
