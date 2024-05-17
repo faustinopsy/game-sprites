@@ -12,6 +12,9 @@ O projeto foca no uso de imagens sprite para a animação de personagens e outro
 ## Uso de Classes para Modularização
 O código é organizado em várias classes para encapsular diferentes aspectos do jogo:
 
+<img src='./img/factory.png'>
+
+
 - Kyo: Classe que gerencia o personagem principal, incluindo suas animações e interações, como correr, pular e atacar.
 - Inimigo: Classe responsável por controlar os inimigos, incluindo sua aparição, animação e lógica de dano.
 - Cenario: Classe que gerencia o cenário do jogo, controlando aspectos como a mudança de fundos e a interação com o cenário.
