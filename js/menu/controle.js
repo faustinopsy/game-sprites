@@ -10,7 +10,7 @@ export class Controles {
         this.tempoBase = 200; 
         this.string = null;
         this.init();
-        
+        console.log(this.kyo)
     }
 
     init() {
@@ -19,12 +19,12 @@ export class Controles {
         
     }
     virarDireita(){
-        this.kyo.kyo.classList.add('virar')
+        this.kyo.elemento.classList.add('virar')
         this.cenario.posicao=1
         this.kyo.direcaoPulo=-1
       }
      virarEsquerda(){
-        this.kyo.kyo.classList.remove('virar')
+        this.kyo.elemento.classList.remove('virar')
         this.cenario.posicao=2
         this.kyo.direcaoPulo=1
       }
