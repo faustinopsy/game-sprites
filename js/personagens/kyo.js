@@ -10,6 +10,7 @@ export class Kyo extends Personagem {
         this.direcaoPulo = 1;
         this.gravidade = 2;
         this.vidaMaxima = 100;
+        this.vida = 1000;
     }
 
     perderFolego(origem, intervaloAtual) {
@@ -65,12 +66,31 @@ export class Kyo extends Personagem {
     }
 
     correr(intervaloAtual) {
-        this.posicaoX -= 100;
-        this.perderFolego(2, intervaloAtual);
+        const larguraCenario = document.getElementsByClassName('cenario')[0].clientWidth;
+        let posicaoHorizontal = parseInt(this.elemento.style.left || '0px', 10);
+
+        posicaoHorizontal -= 60 * this.direcaoPulo;
+
+        if (posicaoHorizontal < -340) {
+            posicaoHorizontal = -340;
+        } 
+        if (posicaoHorizontal > larguraCenario - 340) {
+            posicaoHorizontal = larguraCenario - 340;
+        }
+        // else if (posicaoHorizontal > larguraCenario - this.elemento.clientWidth) {
+        //     posicaoHorizontal =  this.elemento.clientWidth;
+        // }
+
+        this.elemento.style.left = `${posicaoHorizontal}px`;
         this.elemento.style.background = `url(./img/kyo.png) ${this.posicaoX}px -200px`;
+
+        this.posicaoX -= 100;
         if (this.posicaoX <= -500) {
             this.posicaoX = 0;
         }
+
+        //this.perderFolego(2, intervaloAtual);
+
         if (this.vida <= 0) {
             this.parar(intervaloAtual);
         }
