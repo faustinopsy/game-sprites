@@ -11,7 +11,7 @@
 @media (max-width: 900px) {
 
 }
-@media (max-width: 600px) {
+@media screen and (max-width: 700px){
   .pai-kyo, .pai-inimigo, .cenario {
     transform: scale(1);  
     z-index: 2;
@@ -27,6 +27,33 @@
   }
   #soco:hover{
     background-color: gold;
+  }
+  .pai-iori{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 200px;
+    height: 150px;
+    top: 30%;
+    left: 40%;
+    border: solid red;
+    background-color: rgba(0, 255, 255, 0.352);
+    backdrop-filter: blur(20%);
+    z-index: 3;
+    top: 10%;
+    left: 25%;
+  }
+  details {
+    color: #ffffff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+    width: 50%;
+    margin-left: 60px;
+  }
+  #inicia-game{
+    width: 50%;
+    margin-left: 20%;
   }
 }
 @media (max-width: 300px) {

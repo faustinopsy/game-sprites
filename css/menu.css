@@ -3,6 +3,8 @@ details {
   border: 1px solid #aaa;
   border-radius: 4px;
   padding: 0.5em 0.5em 0;
+  width: 50%;
+  margin-left: 60px;
 }
 
 summary {
@@ -27,11 +29,15 @@ details[open] summary {
 }
 .menu {
   position: fixed;
+  display: flex;
   background-color: rgb(3 3 3 / 58%);
   backdrop-filter: blur(10px);
-  width: 100%;
+  width: 105%;
   height: 100%;
+  left: -4px;
   z-index: 5;
+  flex-direction: column;
+  align-items: baseline;
 }
 
 .menu h1 {
@@ -44,4 +50,9 @@ details[open] summary {
   background-color: rgba(250, 237, 237, 0.584);
   font-size: 16px;
   cursor: pointer;
+}
+
+#inicia-game{
+  width: 50%;
+  margin-left: 25%;
 }

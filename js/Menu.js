@@ -19,7 +19,7 @@ export class Menu {
                 <summary id="opcao">Opções</summary>
                 <div>
                     <label for="velocidadeVertical">Velocidade Vertical: <span id="velocidadeValor">200</span></label>
-                    <input type="range" id="velocidadeVertical" min="-20" max="2000" value="200">
+                    <input type="range" id="velocidadeVertical" min="-20" max="2000" value="20">
                 </div>
                 <div>
                     <label for="gravidade">Gravidade: <span id="gravidadeValor">2</span></label>

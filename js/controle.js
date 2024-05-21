@@ -39,6 +39,11 @@ export class Controles {
         this.soco = this.criarBotao('soco', 'teal', 'soco', '66px');
         this.tras = this.criarBotao('tras', 'teal', 'corre', '66px');
 
+        this.lado_e = this.criarBotao('lado_e', 'teal', '<<<', '66px');
+        this.lado_d = this.criarBotao('lado_d', 'teal', '>>>', '66px');
+
+        div1.appendChild(this.lado_e);
+        div1.appendChild(this.lado_d);
         div1.appendChild(this.frente);
         div1.appendChild(this.pula);
 
@@ -61,6 +66,8 @@ export class Controles {
     }
 
     adicionarEventosBotoes() {
+        this.lado_e.addEventListener('click', () => this.virarEsquerda());
+        this.lado_d.addEventListener('click', () => this.virarDireita());
         this.frente.addEventListener('click', () => this.acaoParar());
         this.soco.addEventListener('click', () => this.acaoSoco());
         this.especial.addEventListener('click', () => this.acaoEspecial());

@@ -18,4 +18,6 @@
   background-color: rgba(0, 255, 255, 0.352);
   backdrop-filter: blur(20%);
   z-index: 3;
+  top: 10%;
+  left: 40%;
 }

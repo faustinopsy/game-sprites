@@ -5,7 +5,7 @@ export class Kyo {
         this.estaPulando = false;
         this.velocidadeVertical = 200;
         this.alturaMaxima = 150;
-        this.direcaoPulo = -1;
+        this.direcaoPulo = 1;
         this.gravidade = 2;
         this.vida = 100;
         this.vidaMaxima = 100; 
