@@ -1,12 +1,11 @@
-import { Kyo } from './kyo.js';
-import { Inimigo } from './inimigo.js';
-import { Cenario } from './Cenario.js';
-import { Menu } from './Menu.js';
-import { init } from './loading.js';
-import { Controles } from './controle.js';
-import {MonitorarPerformance} from "./MonitorarPerformance.js";
-import {RegistarSW} from "./RegistrarSw.js";
-//https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver
+import { PersonagemFactory } from './factory/PersonagemFactory.js';
+import { Menu } from './menu/Menu.js';
+import { init } from './menu/loading.js';
+import { Controles } from './menu/controle.js';
+import { Cenario } from './cenario/Cenario.js';
+import { MonitorarPerformance } from "./MonitorarPerformance.js";
+import { RegistarSW } from "./RegistrarSw.js";
+
 new MonitorarPerformance();
 new RegistarSW();
 
@@ -15,11 +14,12 @@ const menu = new Menu(mainContainer);
 const kyoElemento = document.querySelector('.kyo');
 const inimigoElemento = document.querySelector('.inimigo');
 const cenarioElemento = document.querySelector('.cenario');
-const kyo = new Kyo(kyoElemento);
-window.myKyo = kyo;
-const inimigo = new Inimigo(inimigoElemento,kyoElemento);
+
+const kyo = PersonagemFactory.criarPersonagem('kyo', kyoElemento);
+const inimigo = PersonagemFactory.criarPersonagem('inimigo', inimigoElemento, kyoElemento);
 const cenario = new Cenario(cenarioElemento);
-const controles = new Controles(document.querySelector('.controle'), kyo,inimigo, cenario,menu);
+const controles = new Controles(document.querySelector('.controle'), kyo, inimigo, cenario, menu);
+window.myKyo = kyo;
 
 
 
