@@ -1,4 +1,4 @@
-const CACHE_NAME = 'app-cache-v1';
+const CACHE_NAME = 'app-cache-v2';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -13,14 +13,17 @@ const STATIC_ASSETS = [
     './css/loading.css',
     './css/main.css',
     './css/menu.css',
+    './css/controle.css',
     './css/responsivo.css',
     './js/app.js',
-    './js/Cenario.js',
-    './js/controle.js',
-    './js/inimigo.js',
-    './js/kyo.js',
-    './js/loading.js',
-    './js/Menu.js',
+    './factory/Personagem.js',
+    './factory/PersonagemFactory.js',
+    './js/cenario/Cenario.js',
+    './js/menu/controle.js',
+    './js/personagens/inimigo.js',
+    './js/personagens/kyo.js',
+    './js/menu/loading.js',
+    './js/menu/Menu.js',
     './js/MonitorarPerformance.js'
 ];
 
