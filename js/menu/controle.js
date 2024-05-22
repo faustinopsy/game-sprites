@@ -10,7 +10,6 @@ export class Controles {
         this.tempoBase = 200; 
         this.string = null;
         this.init();
-        console.log(this.kyo)
     }
 
     init() {
@@ -146,7 +145,7 @@ export class Controles {
     acaoCorrer() {
         this.limparTempo();
         this.intervaloAtual = setInterval(() => this.kyo.correr(this.intervaloAtual), this.tempoBase);
-        this.intervaloAtualCenario = setInterval(() => this.cenario.atualizaCenario(this.kyo.posicaoX), this.tempoBase);
+        //this.intervaloAtualCenario = setInterval(() => this.cenario.atualizaCenario(this.kyo.posicaoX), this.tempoBase);
     }
 
     limparTempo() {

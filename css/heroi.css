@@ -11,11 +11,12 @@
 .kyo {
   position: relative;
   z-index: 2; 
-  background: url(../img/kyo.png) -30px 0;
+  background: url(../img/kyo.png) -10px 0;
   margin: 0px 0px;
   cursor: pointer;
   transform: scale(2);
-  width: 70px;
+  width: 100px;
+  left: 100px;
 }
 .kyo, .inimigo {
   /* border: 2px solid red;  */
